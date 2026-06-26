@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Tracker MIT Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#d1d5db;
+}
+
+.phone{
+    width:320px;
+    height:640px;
+    background:black;
+    border-radius:35px;
+    padding:8px;
+    box-shadow:0 0 25px rgba(0,0,0,0.4);
+}
+
+.screen{
+    width:100%;
+    height:100%;
+    background:#dcdcdc;
+    border-radius:28px;
+    overflow:hidden;
+    border:2px solid #111;
+}
+
+.statusbar{
+    height:30px;
+    background:#3f51b5;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 12px;
+    font-size:14px;
+}
+
+.header{
+    background:#3f51b5;
+    color:white;
+    height:50px;
+    display:flex;
+    align-items:center;
+    padding-left:12px;
+    font-size:24px;
+}
+
+.content{
+    text-align:center;
+    padding-top:20px;
+    height:calc(100% - 80px);
+}
+
+.question{
+    font-size:28px;
+    margin-bottom:35px;
+}
+
+button{
+    width:90px;
+    height:40px;
+    border:none;
+    cursor:pointer;
+    margin:15px 0;
+    font-size:15px;
+}
+
+.happy{
+    background:#FFD700;
+}
+
+.sad{
+    background:#2563eb;
+    color:white;
+}
+
+.excited{
+    background:#cc5500;
+    color:white;
+}
+
+.result{
+    margin-top:50px;
+    font-size:28px;
+}
+</style>
+</head>
+<body>
+
+<div class="phone">
+    <div class="screen" id="screen">
+
+        <div class="statusbar">
+            <span>12:30</span>
+            <span>📶 📡 🔋</span>
+        </div>
+
+        <div class="header">Mood Tracker</div>
+
+        <div class="content">
+            <div class="question">How are you feeling?</div>
+
+            <button class="happy" onclick="setMood('happy', '#FFD700')">Happy</button><br>
+            <button class="sad" onclick="setMood('sad', '#2563eb')">Sad</button><br>
+            <button class="excited" onclick="setMood('excited', '#cc5500')">Excited</button>
+
+            <div class="result" id="result">ما شعورك ؟</div>
+        </div>
+    </div>
+</div>
+
+<script>
+function setMood(mood,color){
+    document.getElementById("screen").style.background = color;
+    document.getElementById("result").innerText = "I am feeling " + mood;
+}
+</script>
+
+</body>
+</html>
